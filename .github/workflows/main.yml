@@ -21,10 +21,8 @@ jobs:
         
       - name: build
         run: msbuild TestTrigger/TestTrigger.sln -p:Configuration=Release -p:name=octocat
-      - name: run testtrigger
-        run: TestTrigger/Release/TestTrigger.exe
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.0
         with:
-          path: TestTrigger/Release/TestTrigger.exe
+          path: TestTrigger/x64/Release/TestTrigger.exe
