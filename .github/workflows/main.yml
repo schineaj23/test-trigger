@@ -20,7 +20,7 @@ jobs:
       - uses: microsoft/setup-msbuild@v1
         
       - name: build
-        run: msbuild TestTrigger/TestTrigger.sln -p:Configuration=Release -p:DefineConstants="HELLO_NAME="octocat""
+        run: msbuild TestTrigger/TestTrigger.sln -p:Configuration=Release -p:name=octocat
       - name: run testtrigger
         run: TestTrigger/Release/TestTrigger.exe
 
