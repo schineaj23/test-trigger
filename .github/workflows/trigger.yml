@@ -26,6 +26,14 @@ jobs:
       
       - uses: microsoft/setup-msbuild@v1
         
+      # since we're usually only changing the name of these builds, we can just cache it for quicker compilation
+      # i'm not going to only cache afterwards because it will always be updated by the previous build
+      - name: retrieve previous build cache
+      - uses: actions/cache@v2.1.2
+        with:
+          path: TestTrigger/x64/Release/
+          key: deploy-cache
+        
       - name: build
         run: msbuild TestTrigger/TestTrigger.sln -p:Configuration=Release -p:name=${{ github.event.inputs.name }}
 
