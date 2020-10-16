@@ -2,9 +2,11 @@
 //
 
 #include <iostream>
+#include <bits/stdc++.h> 
 
 int main()
 {
     std::cout << "Hello " << HELLO_NAME << "\n";
+    system("pause");
 }
 
